@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ── Variables ───────────────────────────────────── */
+:root {
+  --gold: #f0a500;
+  --navy: #1a1a2e;
+  --white: #ffffff;
+  --light-bg: #f0f4ff;
+  --text-muted: #666;
+  --font: 'Outfit', sans-serif;
+}
+
+/* ── Section Shell ───────────────────────────────── */
+.impact {
+  background: var(--light-bg);
+  padding: 90px 0 70px;
+  font-family: var(--font);
+  overflow: hidden;
+}
+
+/* ── Header Row ──────────────────────────────────── */
+.impact__header {
+  max-width: 1280px;
+  margin: 0 auto 48px;
+  padding: 0 60px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.impact__header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.impact__heading {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.impact__underline {
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.impact__tagline {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ── Slider Wrapper ──────────────────────────────── */
+.impact__slider-wrap {
+  padding-left: 60px;
+  overflow: hidden;
+}
+
+.impact__track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ── Individual Slide ────────────────────────────── */
+.impact__slide {
+  flex-shrink: 0;
+  width: 260px;
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.impact__slide:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.impact__img-wrap {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.impact__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.impact__slide:hover .impact__img {
+  transform: scale(1.05);
+}
+
+.impact__slide-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 46px 18px 50px;
+}
+
+.impact__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.impact__slide-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Dot Indicators ──────────────────────────────── */
+.impact__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.impact__dot-btn {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s, width 0.3s;
+}
+
+.impact__dot-btn.active {
+  background: var(--gold);
+  width: 24px;
+  border-radius: 4px;
+  transform: none;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .impact__header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 28px;
+  }
+
+  .impact__slider-wrap {
+    padding-left: 28px;
+  }
+
+  .impact__heading {
+    font-size: 28px;
+  }
+
+  .impact__slide {
+    width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact {
+    padding: 60px 0 50px;
+  }
+
+  .impact__slide {
+    width: 200px;
+  }
+
+  .impact__img-wrap {
+    height: 150px;
+  }
+}
+@media (max-width: 600px) {
+
+    .impact__header {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 28px;
+  }
+  .impact__slider-wrap {
+    padding: 0 54px;
+    overflow: visible;
+  }
+
+  .impact__track {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    transform: none !important;
+  }
+
+  .impact__slide {
+    width: 100%;
+  }
+
+  .impact__dots {
+    display: none;
+  }
+
+}

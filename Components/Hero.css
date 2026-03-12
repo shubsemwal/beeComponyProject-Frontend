@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ── Variables ───────────────────────────────────── */
+:root {
+  --gold: #f0a500;
+  --gold-dark: #d4920a;
+  --navy: #0d1b3e;
+  --white: #ffffff;
+  --font: 'Outfit', sans-serif;
+}
+
+/* ── Hero Shell ──────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 560px;
+  background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80')
+    center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 80px 80px 60px;
+  gap: 40px;
+  overflow: hidden;
+  font-family: var(--font);
+}
+
+/* Dark overlay */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(10, 20, 55, 0.92) 0%,
+    rgba(10, 20, 55, 0.75) 55%,
+    rgba(10, 20, 55, 0.25) 100%
+  );
+  z-index: 0;
+}
+
+/* ── Left Content ────────────────────────────────── */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  flex: 1;
+}
+
+.hero__eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 16px 0;
+  border-left: 3px solid var(--gold);
+  padding-left: 10px;
+}
+
+.hero__heading {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.15;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
+}
+
+.hero__subtext {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.75;
+  margin: 0 0 36px 0;
+  max-width: 520px;
+}
+
+.hero__cta {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.15s;
+}
+
+.hero__cta:hover {
+  background: var(--gold-dark);
+  transform: translateY(-2px);
+}
+
+/* ── Right Stats Card ────────────────────────────── */
+.hero__card {
+  position: relative;
+  z-index: 1;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px 28px 20px;
+  width: 220px;
+  flex-shrink: 0;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Avatars row */
+.hero__card-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.hero__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  object-fit: cover;
+  margin-left: -8px;
+}
+
+.hero__avatar:first-child {
+  margin-left: 0;
+}
+
+.hero__avatar-badge {
+  margin-left: 8px;
+  background: #22c55e;
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-family: var(--font);
+}
+
+/* Stat number */
+.hero__card-stat {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.hero__card-number {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--navy);
+  font-family: var(--font);
+}
+
+.hero__card-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  margin-top: 4px;
+  font-family: var(--font);
+}
+
+/* Bar chart */
+.hero__chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 60px;
+}
+
+.hero__bar {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  background: var(--gold);
+  animation: barGrow 0.6s ease both;
+}
+
+.hero__bar:nth-child(odd) {
+  background: #f0c04a;
+}
+
+@keyframes barGrow {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px 28px;
+    min-height: auto;
+  }
+
+  .hero__card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__heading {
+    font-size: 28px;
+  }
+}

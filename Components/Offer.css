@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ── Variables ───────────────────────────────────── */
+:root {
+  --gold: #f0a500;
+  --gold-dark: #d4920a;
+  --navy: #1a1a2e;
+  --white: #ffffff;
+  --light-bg: #f9f9f9;
+  --border: #ebebeb;
+  --text-muted: #666;
+  --font: 'Outfit', sans-serif;
+}
+
+/* ── Section Shell ───────────────────────────────── */
+.offer {
+  background: var(--white);
+  padding: 90px 0;
+  font-family: var(--font);
+}
+
+.offer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 20px 80px 20px;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  background: rgb(222, 220, 233);
+}
+
+/* ── Left Column ─────────────────────────────────── */
+.offer__left {
+  flex-shrink: 0;
+  width: 260px;
+  padding-top: 6px;
+}
+
+.offer__heading {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.offer__underline {
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.offer__desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin: 20px 0 32px 0;
+}
+
+.offer__cta {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.15s;
+}
+
+.offer__cta:hover {
+  background: var(--gold-dark);
+  transform: translateY(-2px);
+}
+
+/* ── Right Grid ──────────────────────────────────── */
+.offer__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+/* First row: 2 cards span naturally, but SEO is bigger */
+/* SEO card takes full first row col 1-2 */
+.offer__card:first-child {
+  grid-column: 1 / 2;
+}
+
+/* ── Card Base ───────────────────────────────────── */
+.offer__card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  width: 320px;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.offer__card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.09);
+  transform: translateY(-3px);
+}
+
+/* ── Highlight Card (SEO) ────────────────────────── */
+.offer__card--highlight {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+
+.offer__card--highlight .offer__card-title {
+  color: var(--white);
+}
+
+.offer__card--highlight .offer__card-desc {
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 500;
+}
+
+.offer__card--highlight .offer__card-link {
+  color: var(--white);
+  font-weight: 700;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.offer__card--highlight .offer__card-icon {
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+}
+
+/* ── Card Elements ───────────────────────────────── */
+.offer__card-icon {
+  width: 42px;
+  height: 42px;
+  background: #fff8e7;
+  border: 1px solid #f0e8d0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.offer__card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+
+.offer__card-desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.offer__card-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  align-self: flex-start;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.offer__card-link:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 1024px) {
+  .offer__inner {
+    flex-direction: column;
+    padding: 0 32px;
+  }
+
+  .offer__left {
+    width: 100%;
+  }
+
+  .offer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .offer {
+    padding: 60px 0;
+  }
+
+  .offer__inner {
+    padding: 0 6px;
+  }
+
+  .offer__grid {
+    grid-template-columns: 1fr;
+    padding: 40px 2px;
+  }
+
+  .offer__heading {
+    font-size: 28px;
+  }
+}
