@@ -11,7 +11,7 @@
 /* ── Section wrapper ─────────────────────────────── */
 .booking {
   background: var(--navy);
-  padding: 60px;
+  padding: 60px 60px 0 60px; /* Remove bottom padding so it sits flush above footer */
   font-family: var(--font);
 }
 
@@ -25,6 +25,7 @@
   padding: 64px 48px;
   text-align: center;
   overflow: hidden;
+  transform: translateY(-240px)
 }
 
 /* ── Text ────────────────────────────────────────── */
@@ -98,10 +99,10 @@
   animation: sparkPulse 2.5s ease-in-out infinite;
 }
 
-.booking__spark--tl { top: 24px;  left: 32px;  animation-delay: 0s; }
-.booking__spark--tr { top: 24px;  right: 32px; animation-delay: 0.6s; }
-.booking__spark--bl { bottom: 24px; left: 32px;  animation-delay: 1.2s; }
-.booking__spark--br { bottom: 24px; right: 32px; animation-delay: 1.8s; }
+.booking__spark--tl { top: 24px;    left: 32px;   animation-delay: 0s; }
+.booking__spark--tr { top: 24px;    right: 32px;  animation-delay: 0.6s; }
+.booking__spark--bl { bottom: 24px; left: 32px;   animation-delay: 1.2s; }
+.booking__spark--br { bottom: 24px; right: 32px;  animation-delay: 1.8s; }
 
 @keyframes sparkPulse {
   0%, 100% { opacity: 0.35; transform: scale(1); }
@@ -111,7 +112,7 @@
 /* ── Responsive ──────────────────────────────────── */
 @media (max-width: 768px) {
   .booking {
-    padding: 40px 20px;
+    padding: 40px 20px 0 20px;
   }
 
   .booking__card {

@@ -14,7 +14,7 @@
 .footer {
   background: var(--navy);
   font-family: var(--font);
-  padding-top: 70px;
+  padding-top: 0px;
 }
 
 .footer__inner {

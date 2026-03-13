@@ -209,3 +209,10 @@
     font-size: 28px;
   }
 }
+@media (max-width: 600px) {
+    .hero__card {
+        max-width: 100%;
+        padding: 18px 8px;
+        border-radius: 12px;
+    }
+}

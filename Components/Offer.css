@@ -102,7 +102,7 @@
   border-radius: 14px;
   padding: 28px 24px;
   display: flex;
-  width: 320px;
+  width: 280px;
   flex-direction: column;
   gap: 10px;
   transition: box-shadow 0.2s, transform 0.2s;
@@ -118,6 +118,7 @@
   background: var(--gold);
   border-color: var(--gold);
   color: var(--white);
+  transform: rotate(-3deg);
 }
 
 .offer__card--highlight .offer__card-title {
@@ -194,6 +195,7 @@
 
   .offer__left {
     width: 100%;
+    padding-top: 80px;
   }
 
   .offer__grid {
@@ -209,10 +211,15 @@
   .offer__inner {
     padding: 0 6px;
   }
-
+ .offer__left {
+    width: 100%;
+    padding-top: 80px;
+  }
   .offer__grid {
     grid-template-columns: 1fr;
-    padding: 40px 2px;
+    padding: 0px 2px;
+    justify-items: center;
+    padding-left:40px;
   }
 
   .offer__heading {
