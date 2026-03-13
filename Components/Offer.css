@@ -15,7 +15,7 @@
 /* ── Section Shell ───────────────────────────────── */
 .offer {
   background: var(--white);
-  padding: 90px 0;
+  padding: 0px 0;
   font-family: var(--font);
 }
 
@@ -205,7 +205,7 @@
 
 @media (max-width: 600px) {
   .offer {
-    padding: 60px 0;
+    padding: 0px 0;
   }
 
   .offer__inner {

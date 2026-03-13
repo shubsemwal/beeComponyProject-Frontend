@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+/* ── Strip wrapper ───────────────────────────────── */
+.logostrip {
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #e9edf4;
+  border-bottom: 1px solid #e9edf4;
+  padding: 28px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fade edges on desktop */
+.logostrip::before,
+.logostrip::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logostrip::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+}
+
+.logostrip::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+}
+
+/* ── Scrolling track ─────────────────────────────── */
+.logostrip__track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: logoScroll 22s linear infinite;
+}
+
+.logostrip__track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Individual item ─────────────────────────────── */
+.logostrip__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 48px;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.logostrip__item:hover {
+  opacity: 1;
+}
+
+/* ── SVG logo ────────────────────────────────────── */
+.logostrip__svg {
+  width: 130px;
+  height: 34px;
+  display: block;
+}
+
+/* ── Keyframe ────────────────────────────────────── */
+@keyframes logoScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Tablet ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .logostrip {
+    padding: 24px 0;
+  }
+
+  .logostrip__item {
+    padding: 0 36px;
+  }
+
+  .logostrip__svg {
+    width: 110px;
+    height: 30px;
+  }
+
+  .logostrip::before,
+  .logostrip::after {
+    width: 80px;
+  }
+}
+
+/* ── Mobile ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .logostrip {
+    padding: 20px 0;
+  }
+
+  .logostrip__item {
+    padding: 0 28px;
+  }
+
+  .logostrip__svg {
+    width: 90px;
+    height: 26px;
+  }
+
+  .logostrip::before,
+  .logostrip::after {
+    width: 50px;
+  }
+
+  .logostrip__track {
+    animation-duration: 16s;
+  }
+}
+
+/* ── Small mobile ────────────────────────────────── */
+@media (max-width: 480px) {
+  .logostrip__item {
+    padding: 0 20px;
+  }
+
+  .logostrip__svg {
+    width: 76px;
+    height: 22px;
+  }
+
+  .logostrip__track {
+    animation-duration: 12s;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .logostrip__track {
+    animation: none;
+  }
+  .logostrip__track {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 24px;
+    padding: 0 20px;
+  }
+}   

@@ -36,7 +36,7 @@
 }
 
 .testimonial__heading {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 800;
   color: var(--navy);
   margin: 0 0 12px 0;
@@ -44,7 +44,7 @@
 }
 
 .testimonial__sub {
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 2px;
   color: var(--text-muted);

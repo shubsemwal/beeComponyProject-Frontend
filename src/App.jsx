@@ -3,8 +3,10 @@ import BookingCard from "../Components/BookingCard"
 import Footer from "../Components/Footer"
 import Hero from "../Components/Hero"
 import Impact from "../Components/Impact"
+import LogoStrip from "../Components/Logostrip"
 import Navbar from "../Components/Navbar"
 import Offer from "../Components/Offer"
+import TechnologyPartners from "../Components/Technologypartners"
 import Blog from "../Components/Testimonial"
 
 function App() {
@@ -12,8 +14,10 @@ function App() {
     <>
       <Navbar />
       <Hero />
+      <LogoStrip />
       <Offer />  
       <Impact /> 
+      <TechnologyPartners />
       <Testimonial />
       <Blog />
       <BookingCard />
